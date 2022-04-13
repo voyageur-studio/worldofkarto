@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-
+import * as fx from 'postprocessing'
 import Debug from './Utils/Debug.js'
 import Sizes from './Utils/Sizes.js'
 import Time from './Utils/Time.js'
@@ -38,6 +38,17 @@ export default class Experience
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.world = new World()
+
+        //fog
+        const color = 0x67D0FA;
+        {
+
+            const near = 5;
+            const far = 150;
+            this.scene.fog = new THREE.Fog(color, near, far);
+        }
+        this.scene.background = new THREE.Color(color);
+        //fx
 
         // Resize event
         this.sizes.on('resize', () =>

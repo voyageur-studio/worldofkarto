@@ -25,6 +25,46 @@ export default [
     {
         name: 'foxModel',
         type: 'gltfModel',
-        path: 'models/Fox/glTF/Fox.gltf'
-    }
+        path: 'models/Fox/glTF-Binary/Fox.glb'
+    },
+    {
+        name: 'landModel',
+        type: 'gltfModel',
+        path: 'models/Land/Land.glb'
+    },
+    {
+        name: 'darkspeareModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Darkspeare.glb'
+    },
+    {
+        name: 'lighthouselightModel',
+        type: 'gltfModel',
+        path: 'models/Other/Lighthouse_light.glb'
+    },
+    {
+        name: 'lighthouseModel',
+        type: 'gltfModel',
+        path: 'models/Other/Lighthouse.glb'
+    },
+    {
+        name: 'crossroadsModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Crossroads.glb'
+    },
+    {
+        name: 'midfairModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Midfair.glb'
+    },
+    {
+        name: 'windmillModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Windmill.glb'
+    },
+    {
+        name: 'treesModel',
+        type: 'gltfModel',
+        path: 'models/Land/Trees.glb'
+    },
 ]

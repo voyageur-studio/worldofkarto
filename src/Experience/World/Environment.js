@@ -17,17 +17,24 @@ export default class Environment
         }
 
         this.setSunLight()
+        this.setHemLight()
         this.setEnvironmentMap()
     }
 
     setSunLight()
     {
-        this.sunLight = new THREE.DirectionalLight('#ffffff', 4)
+        this.sunLight = new THREE.DirectionalLight('#ffffbb', 4)
         this.sunLight.castShadow = true
-        this.sunLight.shadow.camera.far = 15
-        this.sunLight.shadow.mapSize.set(1024, 1024)
+        this.sunLight.shadow.camera.far = 300
+        this.sunLight.shadow.camera.near = 10
+        this.sunLight.shadow.camera.bottom = -75
+        this.sunLight.shadow.camera.top = 75
+        this.sunLight.shadow.camera.left = -75
+        this.sunLight.shadow.camera.right = 75
+        this.sunLight.shadow.mapSize.set(2048, 2048)
         this.sunLight.shadow.normalBias = 0.05
-        this.sunLight.position.set(3.5, 2, - 1.25)
+        this.sunLight.shadow.bias = 0.001
+        this.sunLight.position.set(-50, 50, 1)
         this.scene.add(this.sunLight)
 
         // Debug
@@ -63,6 +70,41 @@ export default class Environment
         }
     }
 
+    setHemLight() {
+        this.hemLight = new THREE.HemisphereLight('#ffffff', '#7891A7', 1.5)
+        this.scene.add(this.hemLight)
+
+        // Debug
+        if (this.debug.active) {
+            this.debugFolder
+                .add(this.sunLight, 'intensity')
+                .name('sunLightIntensity')
+                .min(0)
+                .max(10)
+                .step(0.001)
+
+            this.debugFolder
+                .add(this.sunLight.position, 'x')
+                .name('sunLightX')
+                .min(- 5)
+                .max(5)
+                .step(0.001)
+
+            this.debugFolder
+                .add(this.sunLight.position, 'y')
+                .name('sunLightY')
+                .min(- 5)
+                .max(5)
+                .step(0.001)
+
+            this.debugFolder
+                .add(this.sunLight.position, 'z')
+                .name('sunLightZ')
+                .min(- 5)
+                .max(5)
+                .step(0.001)
+        }
+    }
     setEnvironmentMap()
     {
         this.environmentMap = {}
