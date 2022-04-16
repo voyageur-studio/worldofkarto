@@ -31,12 +31,14 @@ export default class Crossroads
 
         this.model.traverse((child) =>
         {
-            if(child instanceof THREE.Object3D)
+            if(child instanceof THREE.Mesh)
             {
                 child.castShadow = true
                 child.receiveShadow = true
             }
         })
+        
+
         console.log(this.model)
     }
 

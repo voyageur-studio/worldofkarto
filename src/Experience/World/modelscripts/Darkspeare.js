@@ -28,15 +28,25 @@ export default class Darkspeare
         this.model = this.resource.scene
         this.model.scale.set(1, 1, 1)
         this.scene.add(this.model)
-
         this.model.traverse((child) =>
         {
             if(child instanceof THREE.Mesh)
             {
                 child.castShadow = true
+                //child.receiveShadow = true
+            }
+
+            
+        })
+        this.stele = this.model.getObjectByName('Darkspeare_Stele')
+        this.stele.traverse((child) =>
+        {
+            if(child instanceof THREE.Mesh)
+            {
                 child.receiveShadow = true
             }
         })
+
         console.log(this.model)
     }
 

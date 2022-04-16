@@ -8,6 +8,9 @@ import Darkspeare from './modelscripts/Darkspeare.js'
 import Crossroads from './modelscripts/Crossroads.js'
 import Midfair from './modelscripts/Midfair.js'
 import Windmill from './modelscripts/Windmill.js'
+import Gargadok from './modelscripts/Gargadok.js'
+import Beerbog from './modelscripts/Beerbog.js'
+
 import Trees from './modelscripts/Trees.js'
 
 
@@ -32,6 +35,8 @@ export default class World
             this.crossroads = new Crossroads()
             this.midfair = new Midfair()
             this.windmill = new Windmill()
+            this.gargadok = new Gargadok()
+            this.beerbog = new Beerbog()
             this.trees = new Trees()
             this.environment = new Environment()
         })
@@ -45,6 +50,8 @@ export default class World
             this.lighthouselight.update()
         if (this.windmill)
             this.windmill.update()
+        if (this.gargadok)
+            this.gargadok.update()
     }
     
     

@@ -35,7 +35,7 @@ export default class Midfair
             if(child instanceof THREE.Object3D)
             {
                 child.castShadow = true
-                //child.receiveShadow = false
+                child.receiveShadow = true
             }
         })
         console.log(this.model)

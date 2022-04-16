@@ -7,6 +7,8 @@ import Camera from './Camera.js'
 import Renderer from './Renderer.js'
 import World from './World/World.js'
 import Resources from './Utils/Resources.js'
+import camAnim from './camAnim/camAnim.js'
+import { CameraRig, StoryPointsControls, ThreeDOFControls, CameraHelper } from 'three-story-controls/dist/three-story-controls'
 
 import sources from './sources.js'
 
@@ -38,18 +40,23 @@ export default class Experience
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.world = new World()
-
+        //this.camAnim = new camAnim()
         //fog
         const color = 0x67D0FA;
         {
 
             const near = 5;
-            const far = 150;
+            const far = 400;
             this.scene.fog = new THREE.Fog(color, near, far);
         }
         this.scene.background = new THREE.Color(color);
-        //fx
-
+        //anim
+        
+        this.playBox = document.querySelector('.play')
+        this.playBox.addEventListener("click", function () {
+            new camAnim()
+        }),
+        
         // Resize event
         this.sizes.on('resize', () =>
         {
@@ -62,20 +69,20 @@ export default class Experience
             this.update()
         })
     }
-
+    
     resize()
     {
         this.camera.resize()
         this.renderer.resize()
     }
-
+    
     update()
     {
         this.camera.update()
         this.world.update()
         this.renderer.update()
     }
-
+    
     destroy()
     {
         this.sizes.off('resize')

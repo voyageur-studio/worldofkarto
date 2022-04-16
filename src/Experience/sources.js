@@ -67,4 +67,14 @@ export default [
         type: 'gltfModel',
         path: 'models/Land/Trees.glb'
     },
+    {
+        name: 'gargadokModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Farms/Gargadok.glb'
+    },
+    {
+        name: 'beerbogModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Farms/Beerbog.glb'
+    },
 ]
