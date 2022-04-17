@@ -8,6 +8,7 @@ import Renderer from './Renderer.js'
 import World from './World/World.js'
 import Resources from './Utils/Resources.js'
 import camAnim from './camAnim/camAnim.js'
+import Stats from 'stats.js'
 import { CameraRig, StoryPointsControls, ThreeDOFControls, CameraHelper } from 'three-story-controls/dist/three-story-controls'
 
 import sources from './sources.js'
@@ -41,6 +42,8 @@ export default class Experience
         this.renderer = new Renderer()
         this.world = new World()
         //this.camAnim = new camAnim()
+
+
         //fog
         const color = 0x67D0FA;
         {
@@ -50,6 +53,11 @@ export default class Experience
             this.scene.fog = new THREE.Fog(color, near, far);
         }
         this.scene.background = new THREE.Color(color);
+        //stats
+        this.stats = new Stats();
+        this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+        document.body.appendChild(this.stats.dom);
+        
         //anim
         
         this.playBox = document.querySelector('.play')
@@ -81,6 +89,8 @@ export default class Experience
         this.camera.update()
         this.world.update()
         this.renderer.update()
+        this.stats.update()
+        
     }
     
     destroy()
