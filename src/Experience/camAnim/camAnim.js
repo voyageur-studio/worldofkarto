@@ -40,14 +40,14 @@ export default class camAnim
         gsap.to( this.camera.position, {
             duration: 2, 
             x: 0,
-            y: 75,
+            y: 50,
             z: 0,
         })
 
         gsap.to(this.scene.fog, {
             duration: 2,
-            near: 15,
-            far: 250,
+            near: 25,
+            far: 150,
         })
         this.controls.enabled = true
     

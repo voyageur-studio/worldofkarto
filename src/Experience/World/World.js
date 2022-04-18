@@ -27,7 +27,7 @@ export default class World
         {
             // Setup
             
-            this.fox = new Fox()
+            //this.fox = new Fox()
             this.land = new Land()
             this.lighthouse = new Lighthouse()
             this.lighthouselight = new LighthouseLight()
@@ -44,8 +44,8 @@ export default class World
 
     update()
     {
-        if(this.fox)
-            this.fox.update()
+        /* if(this.fox)
+            this.fox.update() */
         if (this.lighthouselight)
             this.lighthouselight.update()
         if (this.windmill)

@@ -49,7 +49,7 @@ export default class Experience
         {
 
             const near = 5;
-            const far = 400;
+            const far = 200;
             this.scene.fog = new THREE.Fog(color, near, far);
         }
         this.scene.background = new THREE.Color(color);
