@@ -77,4 +77,9 @@ export default [
         type: 'gltfModel',
         path: 'models/Cities/Farms/Beerbog.glb'
     },
+    {
+        name: 'moonvaleModel',
+        type: 'gltfModel',
+        path: 'models/Cities/Moonvale.glb'
+    },
 ]

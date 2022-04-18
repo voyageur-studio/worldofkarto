@@ -12,6 +12,7 @@ import Gargadok from './modelscripts/Gargadok.js'
 import Beerbog from './modelscripts/Beerbog.js'
 
 import Trees from './modelscripts/Trees.js'
+import Moonvale from './modelscripts/Moonvale.js'
 
 
 export default class World
@@ -38,6 +39,7 @@ export default class World
             this.gargadok = new Gargadok()
             this.beerbog = new Beerbog()
             this.trees = new Trees()
+            this.moonvale = new Moonvale()
             this.environment = new Environment()
         })
     }
