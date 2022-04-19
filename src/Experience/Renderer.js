@@ -11,15 +11,22 @@ export default class Renderer
         this.scene = this.experience.scene
         this.camera = this.experience.camera
 
-        this.setInstance()
 
+        
+        this.setInstance()
+        
     }
 
     setInstance()
     {
+        let pixelRatio = window.devicePixelRatio
+        let AA = true
+        if (pixelRatio > 1) {
+            AA = false
+        }
         this.instance = new THREE.WebGLRenderer({
             canvas: this.canvas,
-            antialias: true,
+            antialias: AA,
             powerPreference: "high-performance"
         })
         this.instance.physicallyCorrectLights = true
