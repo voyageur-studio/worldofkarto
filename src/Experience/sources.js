@@ -82,4 +82,9 @@ export default [
         type: 'gltfModel',
         path: '../models/Cities/Moonvale.glb'
     },
+    {
+        name: 'shipsrestModel',
+        type: 'gltfModel',
+        path: '../models/Cities/ShipsRest.glb'
+    },
 ]

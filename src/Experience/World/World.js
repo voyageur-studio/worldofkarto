@@ -13,6 +13,7 @@ import Beerbog from './modelscripts/Beerbog.js'
 
 import Trees from './modelscripts/Trees.js'
 import Moonvale from './modelscripts/Moonvale.js'
+import ShipsRest from './modelscripts/ShipsRest.js'
 
 
 export default class World
@@ -40,6 +41,7 @@ export default class World
             this.beerbog = new Beerbog()
             this.trees = new Trees()
             this.moonvale = new Moonvale()
+            this.shipsrest = new ShipsRest()
             this.environment = new Environment()
         })
     }
