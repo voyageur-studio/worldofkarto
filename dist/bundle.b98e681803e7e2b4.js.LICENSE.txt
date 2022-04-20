@@ -1,0 +1,79 @@
+/*!
+   * Timm
+   *
+   * Immutability helpers with fast reads and acceptable writes.
+   *
+   * @copyright Guillermo Grau Panea 2016
+   * @license MIT
+   */
+
+/*!
+   * Webflow._ (aka) Underscore.js 1.6.0 (custom build)
+   * _.each
+   * _.map
+   * _.find
+   * _.filter
+   * _.any
+   * _.contains
+   * _.delay
+   * _.defer
+   * _.throttle (webflow)
+   * _.debounce
+   * _.keys
+   * _.has
+   * _.now
+   *
+   * http://underscorejs.org
+   * (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+   * Underscore may be freely distributed under the MIT license.
+   * @license MIT
+   */
+
+/*!
+ * GSAP 3.10.3
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * Sizzle CSS Selector Engine v2.3.6
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2021-02-16
+ */
+
+/*!
+ * jQuery JavaScript Library v3.6.0
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2021-03-02T17:08Z
+ */
+
+/**
+ * @license
+ * Copyright 2010-2022 Three.js Authors
+ * SPDX-License-Identifier: MIT
+ */
+
+/**
+ * lil-gui
+ * https://lil-gui.georgealways.com
+ * @version 0.11.0
+ * @author George Michael Brower
+ * @license MIT
+ */
