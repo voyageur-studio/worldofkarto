@@ -36,8 +36,10 @@ export default class camAnim
         const aabb = new THREE.Box3().setFromObject( this.lighthouse )
         const center = aabb.getCenter( new THREE.Vector3() )
         const size = aabb.getSize(new THREE.Vector3() )
-        this.controls.enabled = false
+        
         gsap.to( this.camera.position, {
+            onStart: () => { this.controls.enabled = false },
+            onComplete: () => { this.controls.enabled = true },
             duration: 2, 
             x: 0,
             y: 50,
@@ -48,8 +50,9 @@ export default class camAnim
             duration: 2,
             near: 25,
             far: 150,
+            
         })
-        this.controls.enabled = true
+       
     
         
 

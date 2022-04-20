@@ -87,4 +87,9 @@ export default [
         type: 'gltfModel',
         path: '../models/Cities/ShipsRest.glb'
     },
+    {
+        name: 'wizardModel',
+        type: 'gltfModel',
+        path: '../models/Cities/Wizard.glb'
+    },
 ]

@@ -33,7 +33,7 @@ export default class ShipsRest
             if(child instanceof THREE.Mesh)
             {
                 child.castShadow = true
-                //child.receiveShadow = true
+                child.receiveShadow = true
             }
 
             

@@ -14,6 +14,7 @@ import Beerbog from './modelscripts/Beerbog.js'
 import Trees from './modelscripts/Trees.js'
 import Moonvale from './modelscripts/Moonvale.js'
 import ShipsRest from './modelscripts/ShipsRest.js'
+import Wizard from './modelscripts/Wizard.js'
 
 
 export default class World
@@ -42,6 +43,7 @@ export default class World
             this.trees = new Trees()
             this.moonvale = new Moonvale()
             this.shipsrest = new ShipsRest()
+            this.wizard = new Wizard()
             this.environment = new Environment()
         })
     }
@@ -56,6 +58,8 @@ export default class World
             this.windmill.update()
         if (this.gargadok)
             this.gargadok.update()
+        if (this.wizard)
+            this.wizard.update()
     }
     
     
