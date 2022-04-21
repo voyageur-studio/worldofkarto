@@ -7,7 +7,7 @@
 
 body {
     background-color: #eee6db;
-    font-family: Montserrat, sans-serif;
+    font-family: mundial, sans-serif;
     color: #1b4953;
     font-size: 1.1vw;
     line-height: 1;
@@ -16,7 +16,7 @@ body {
 }
 
 p {
-    margin-bottom: 0px;
+    margin: 0;
 }
 
 a {
@@ -35,17 +35,7 @@ a {
 
 
 
-.play {
-    position: fixed;
-    top: 0%;
-    background-color: rgb(184, 184, 184);
-    padding: 1rem;
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: 100;
-    cursor: pointer;
-    z-index: 100;
-}
+
 
 
 
@@ -177,7 +167,7 @@ a {
 }
 
 .navtext {
-    font-family: 'Open Sans', sans-serif;
+    font-family: mundial, sans-serif;
     font-size: 1.5em;
     font-weight: 800;
     letter-spacing: 2px;
@@ -195,9 +185,9 @@ a {
     text-decoration: none;
 }
 
-.image {
+.logo-image {
     display: block;
-    width: 200px;
+    width: 10em;
 }
 
 .html-embed {
@@ -205,7 +195,7 @@ a {
 }
 
 .site-logo {
-    padding: 1rem 2rem 1.5rem;
+    padding: 1em 2em 1.5em;
     border-style: none solid solid;
     border-width: 0.25rem;
     border-color: #45b1c8;
@@ -213,10 +203,11 @@ a {
     border-bottom-right-radius: 20px;
     background-color: #ffd4b7;
     box-shadow: 0 0 30px -20px #000;
+
 }
 
 .site-logo.w--current {
-    width: 300px;
+    width: auto;
 }
 
 .control-wrap {
@@ -332,16 +323,16 @@ a {
 }
 
 .text-block {
-    font-family: Kcgangstersans, Arial, sans-serif;
+    font-family: mundial, Arial, sans-serif;
     font-size: 1em;
     font-weight: 300;
 }
 
-.play {
+.button {
     position: fixed;
-    left: 40%;
+    left: 50%;
     top: auto;
-    right: 40%;
+    right: 0;
     bottom: 15%;
     z-index: 999;
     display: -webkit-box;
@@ -359,19 +350,29 @@ a {
     background-color: #ffd4b7;
     -webkit-transition: all 200ms cubic-bezier(.455, .03, .515, .955);
     transition: all 200ms cubic-bezier(.455, .03, .515, .955);
-    font-family: 'Open Sans', sans-serif;
+    font-family: mundial, sans-serif;
     color: #ec2127;
     font-size: 1em;
     font-weight: 700;
     text-align: center;
     cursor: pointer;
+    transform: translateX(-50%);
+    max-width: 25%;
+    margin: 0,0,0,0;
+    cursor: pointer;
+    z-index: 100;
 }
 
-.play:hover {
+.button:hover {
     background-color: #ec2127;
     color: #eee6db;
 }
-
+.button-text {
+    font-family: mundial, sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: normal;
+}
 .time {
     position: fixed;
     left: 1%;
@@ -392,7 +393,7 @@ a {
     border-width: 2px;
     border-color: #45b1c8;
     background-color: #ffd4b7;
-    font-family: 'Open Sans', sans-serif;
+    font-family: mundial, sans-serif;
     font-size: 1em;
     font-weight: 700;
     text-align: center;
@@ -419,7 +420,7 @@ a {
     border-width: 2px;
     border-color: #45b1c8;
     background-color: #ffd4b7;
-    font-family: 'Open Sans', sans-serif;
+    font-family: mundial, sans-serif;
     font-size: 1em;
     font-weight: 700;
     text-align: center;
@@ -449,7 +450,7 @@ a {
     border-width: 2px;
     border-color: #45b1c8;
     background-color: #ffd4b7;
-    font-family: 'Open Sans', sans-serif;
+    font-family: mundial, sans-serif;
     font-size: 1em;
     font-weight: 700;
     text-align: center;
@@ -461,7 +462,7 @@ a {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    font-family: Kcgangstersans, Arial, sans-serif;
+    font-family: mundial, Arial, sans-serif;
     font-size: 1.5em;
     font-weight: 300;
     letter-spacing: 1.25px;
@@ -513,6 +514,9 @@ a {
         background-color: #eee6db;
         font-size: 2.5vw;
     }
+    .logo-image {
+        width: 5em;
+    }
 
     .text-block {
         font-size: 0.8em;
@@ -521,22 +525,115 @@ a {
 
 @media screen and (max-width: 479px) {
     body {
-        font-size: 4vw;
+        font-size: 3vw;
     }
+    
 }
 
 /* @font-face {
-    font-family: 'Kcgangstersans';
-    src: url('../assets/KCGangsterSans.otf') format('opentype');
+    font-family: 'mundial';
+    src: url('../assets/mundial.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Kcgangstersans';
-    src: url('../KCGangsterSans-Light.otf') format('opentype');
+    font-family: 'mundial';
+    src: url('../mundial-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 } */
+
+
+/* Loading Screen */
+
+#loading-screen {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 1;
+    transition: 1s opacity;
+    z-index: 998;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+    
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

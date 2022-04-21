@@ -2,13 +2,14 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import EventEmitter from './EventEmitter.js'
+import { Loading } from './LoadingScreen.js'
 
 export default class Resources extends EventEmitter
 {
     constructor(sources)
     {
         super()
-
+        this.loadingScreen = new Loading()
         this.sources = sources
 
         this.items = {}
@@ -25,7 +26,7 @@ export default class Resources extends EventEmitter
         this.loaders.dracoLoader = new DRACOLoader()
         this.loaders.dracoLoader.setDecoderPath( './draco/gltf/')
         this.loaders.dracoLoader.setDecoderConfig ({type: 'js'})
-        this.loaders.gltfLoader = new GLTFLoader()
+        this.loaders.gltfLoader = new GLTFLoader(this.loadingScreen.loadingManager)
         this.loaders.gltfLoader.setDRACOLoader (this.loaders.dracoLoader)
         this.loaders.textureLoader = new THREE.TextureLoader()
         this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()

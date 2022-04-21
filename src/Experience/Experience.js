@@ -12,6 +12,9 @@ import Stats from 'stats.js'
 import { CameraRig, StoryPointsControls, ThreeDOFControls, CameraHelper } from 'three-story-controls/dist/three-story-controls'
 
 import sources from './sources.js'
+import moveDarkspeare from './camAnim/moveDarkspeare.js'
+import moveMoonvale from './camAnim/moveMoonvale.js'
+import moveShipsRest from './camAnim/moveShipsRest.js'
 
 let instance = null
 
@@ -49,10 +52,11 @@ export default class Experience
         {
 
             const near = 5;
-            const far = 200;
+            const far = 250;
             this.scene.fog = new THREE.Fog(color, near, far);
         }
         this.scene.background = new THREE.Color(color);
+        
         //stats
         this.stats = new Stats();
         this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
@@ -60,9 +64,24 @@ export default class Experience
         
         //anim
         
-        this.playBox = document.querySelector('.play')
+        this.playBox = document.getElementById('play')
         this.playBox.addEventListener("click", function () {
             new camAnim()
+        }),
+
+            this.animDarkspeare = document.getElementById('darkspeare')
+        this.animDarkspeare.addEventListener("click", function () {
+            new moveDarkspeare()
+        }),
+
+            this.animMoonvale = document.getElementById('moonvale')
+        this.animMoonvale.addEventListener("click", function () {
+            new moveMoonvale()
+        }),
+
+            this.animShipsRest = document.getElementById('shipsrest')
+        this.animShipsRest.addEventListener("click", function () {
+            new moveShipsRest()
         }),
         
         // Resize event
