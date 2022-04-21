@@ -15,6 +15,8 @@ import sources from './sources.js'
 import moveDarkspeare from './camAnim/moveDarkspeare.js'
 import moveMoonvale from './camAnim/moveMoonvale.js'
 import moveShipsRest from './camAnim/moveShipsRest.js'
+import moveMidfair from './camAnim/moveMidfair.js'
+import moveWizard from './camAnim/moveWizard.js'
 
 let instance = null
 
@@ -65,9 +67,17 @@ export default class Experience
         //anim
         
         this.playBox = document.getElementById('play')
-        this.playBox.addEventListener("click", function () {
+        this.playBox.addEventListener("click", () => {
             new camAnim()
-        }),
+            this.playBox.classList.add('fade-out')
+            this.playBox.addEventListener('transitionend', onTransitionEnd)
+
+            function onTransitionEnd(event) {
+
+                event.target.remove();
+
+            }
+        } ),
 
             this.animDarkspeare = document.getElementById('darkspeare')
         this.animDarkspeare.addEventListener("click", function () {
@@ -82,6 +92,14 @@ export default class Experience
             this.animShipsRest = document.getElementById('shipsrest')
         this.animShipsRest.addEventListener("click", function () {
             new moveShipsRest()
+        }),
+            this.animMidfair = document.getElementById('midfair')
+        this.animMidfair.addEventListener("click", function () {
+            new moveMidfair()
+        }),
+            this.animWizard = document.getElementById('wizard')
+        this.animWizard.addEventListener("click", function () {
+            new moveWizard()
         }),
         
         // Resize event

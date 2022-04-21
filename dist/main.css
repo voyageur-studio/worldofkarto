@@ -361,11 +361,17 @@ a {
     margin: 0,0,0,0;
     cursor: pointer;
     z-index: 100;
+    transition: 1s opacity;
+    opacity: 1;
 }
 
 .button:hover {
     background-color: #ec2127;
     color: #eee6db;
+}
+.button.fade-out {
+    opacity: 0 !important;
+
 }
 .button-text {
     font-family: mundial, sans-serif;
