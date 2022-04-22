@@ -17,6 +17,10 @@ import moveMoonvale from './camAnim/moveMoonvale.js'
 import moveShipsRest from './camAnim/moveShipsRest.js'
 import moveMidfair from './camAnim/moveMidfair.js'
 import moveWizard from './camAnim/moveWizard.js'
+import moveStart from './camAnim/moveStart.js'
+import movePlayButton from './camAnim/movePlayButton.js'
+import TitleLottie from './Utils/TitleScreen.js'
+import LoadingLottie from './Utils/LoadingLottie.js'
 
 let instance = null
 
@@ -47,14 +51,16 @@ export default class Experience
         this.renderer = new Renderer()
         this.world = new World()
         //this.camAnim = new camAnim()
-
+        this.movestart = new moveStart()
+        this.title = new TitleLottie()
+        this.loadinglottie = new LoadingLottie()
 
         //fog
         const color = 0x67D0FA;
         {
 
-            const near = 5;
-            const far = 250;
+            const near = 1;
+            const far = 150;
             this.scene.fog = new THREE.Fog(color, near, far);
         }
         this.scene.background = new THREE.Color(color);
@@ -65,13 +71,16 @@ export default class Experience
         document.body.appendChild(this.stats.dom);
         
         //anim
-        
+        this.controlbuttons = document.querySelector('.control-wrap')
+        this.titlescreen = document.querySelector('.title')
         this.playBox = document.getElementById('play')
         this.playBox.addEventListener("click", () => {
-            new camAnim()
+            new movePlayButton()
             this.playBox.classList.add('fade-out')
+            this.controlbuttons.classList.add('fade-in')
+            this.titlescreen.classList.add('fade-out')
             this.playBox.addEventListener('transitionend', onTransitionEnd)
-
+            this.titlescreen.addEventListener('transitionend', onTransitionEnd)
             function onTransitionEnd(event) {
 
                 event.target.remove();
@@ -100,6 +109,10 @@ export default class Experience
             this.animWizard = document.getElementById('wizard')
         this.animWizard.addEventListener("click", function () {
             new moveWizard()
+        }),
+            this.animStart = document.getElementById('mapreset')
+        this.animStart.addEventListener("click", function () {
+            new movePlayButton()
         }),
         
         // Resize event

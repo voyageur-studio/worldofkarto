@@ -1,11 +1,13 @@
 
-import lottieWeb from "lottie-web";
 import * as THREE from 'three'
 
 export class Loading {
 
     constructor()
     {
+        
+
+
         this.loadingManager = new THREE.LoadingManager(() => {
 
             
