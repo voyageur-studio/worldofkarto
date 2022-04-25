@@ -16,6 +16,7 @@ import Moonvale from './modelscripts/Moonvale.js'
 import ShipsRest from './modelscripts/ShipsRest.js'
 import Wizard from './modelscripts/Wizard.js'
 import {LabelRenderer} from '../LabelRenderer.js'
+import Graelon from './modelscripts/Graelon.js'
 
 
 export default class World
@@ -45,6 +46,7 @@ export default class World
             this.moonvale = new Moonvale()
             this.shipsrest = new ShipsRest()
             this.wizard = new Wizard()
+            this.graelon = new Graelon()
             this.environment = new Environment()
             this.label = new LabelRenderer()
         })

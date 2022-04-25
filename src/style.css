@@ -42,9 +42,9 @@ a {
 
 .title {
     position: fixed;
-    width: 50%;
+    width: 25em;
     left: 50%;
-    top: 0%;
+    top: 1em;
     right: auto;
     bottom: auto;
     z-index: 999;
@@ -84,7 +84,7 @@ a {
     font-weight: 400;
     font-size: 1.25em;
     line-height: normal;
-    margin: .5em 0em;
+    margin: -3em 0em 1em 0em;
     max-width: 25em;
     
 }
