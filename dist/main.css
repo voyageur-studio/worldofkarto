@@ -58,7 +58,7 @@ a {
     -ms-flex-align: center;
     align-items: center;
     font-family: mundial, sans-serif;
-    color: #ec2127;
+    color: white;
     font-size: 1em;
     font-weight: 700;
     text-align: center;
@@ -74,7 +74,7 @@ a {
     display: flex;
     align-content: center;
     align-self: center;
-    background-color: #ffd4b7;
+    background-color: #45b1c8;
     border-style: solid;
     border-color: #45b1c8;
     border-width: 4px;
@@ -85,13 +85,29 @@ a {
     font-size: 1.25em;
     line-height: normal;
     margin: .5em 0em;
-    max-width: 25%;
+    max-width: 25em;
     
 }
 #title {
-    max-width: 35%;
+    max-width: 25em;
 }
+.title-text-floating {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 700;
+    max-width: 15em;
+    display: flex;
+    align-content: center;
+    align-self: center;
+    background-color: #45b1c8;
+    border-style: solid;
+    border-color: #45b1c8;
+    border-width: 4px;
+    border-radius: 1em;
+    padding: 1rem;
+    box-shadow: 0px 0px 30px -10px #00000075;
 
+}
 
 .title.fade-out {
     opacity: 0;
