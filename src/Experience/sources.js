@@ -92,4 +92,9 @@ export default [
         type: 'gltfModel',
         path: '../models/Cities/Wizard.glb'
     },
+    {
+        name: 'graelonModel',
+        type: 'gltfModel',
+        path: '../models/Cities/Graelon.glb'
+    },
 ]

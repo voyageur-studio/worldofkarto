@@ -18,7 +18,7 @@ export default class Graelon
         }
 
         // Resource
-        this.resource = this.resources.items.shipsrestModel
+        this.resource = this.resources.items.graelonModel
 
         this.setModel()
     }
