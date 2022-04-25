@@ -91,6 +91,9 @@ a {
 #title {
     max-width: 25em;
 }
+#site-logo {
+    transform: translateY(-100%);
+}
 .title-text-floating {
     font-size: 1.5em;
     color: white;
@@ -386,6 +389,7 @@ a {
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
+    opacity: 0;
 }
 
 .control-button-text {
@@ -501,6 +505,7 @@ a {
     z-index: 1;
     width: 1.75em;
     height: 1.75em;
+    
     
     /* border-color: #45b1c8; */
     /* background-color: #ffd4b7; */

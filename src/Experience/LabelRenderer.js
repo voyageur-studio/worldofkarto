@@ -216,7 +216,6 @@ export class LabelRenderer
 
     }
      
-
     
 
     update() {

@@ -21,8 +21,7 @@ import moveStart from './camAnim/moveStart.js'
 import movePlayButton from './camAnim/movePlayButton.js'
 import TitleLottie from './Utils/TitleScreen.js'
 import LoadingLottie from './Utils/LoadingLottie.js'
-import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer'
-import { LoadingManager } from 'three'
+import { animate, stagger } from "motion"
 
 
 let instance = null
@@ -84,7 +83,8 @@ export default class Experience
         this.playBox = document.getElementById('play')
         this.playBox.addEventListener("click", () => {
             new movePlayButton()
-            
+            animate('#site-logo', {transform: "translateY(0)" }, {delay: 2}, {duration: 1})
+            animate('.icon', { opacity: "1" }, { delay: stagger(.01), duration: 1, easing: [.22, .03, .26, 1] })
             this.playBox.classList.add('fade-out')
             this.controlbuttons.classList.add('fade-in')
             this.titlescreen.classList.add('fade-out')
@@ -148,6 +148,7 @@ export default class Experience
     {
         this.camera.resize()
         this.renderer.resize()
+        
     }
     
     update()
