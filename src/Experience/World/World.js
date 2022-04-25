@@ -15,6 +15,7 @@ import Trees from './modelscripts/Trees.js'
 import Moonvale from './modelscripts/Moonvale.js'
 import ShipsRest from './modelscripts/ShipsRest.js'
 import Wizard from './modelscripts/Wizard.js'
+import {LabelRenderer} from '../LabelRenderer.js'
 
 
 export default class World
@@ -45,6 +46,7 @@ export default class World
             this.shipsrest = new ShipsRest()
             this.wizard = new Wizard()
             this.environment = new Environment()
+            this.label = new LabelRenderer()
         })
     }
 
@@ -60,6 +62,8 @@ export default class World
             this.gargadok.update()
         if (this.wizard)
             this.wizard.update()
+        if (this.label)
+            this.label.update()
     }
     
     

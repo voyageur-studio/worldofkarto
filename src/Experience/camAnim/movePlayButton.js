@@ -16,12 +16,12 @@ export default class movePlayButton
         this.controls = this.experience.camera.controls
         //camera position
         this.posX = -7.1
-        this.posY = 4
+        this.posY = 6
         this.posZ = -2.35
         
         //target position
         this.targetX = 1.505
-        this.targetY = 1.502
+        this.targetY = 0
         this.targetZ = -7.607
 
 
@@ -38,7 +38,7 @@ export default class movePlayButton
        
 
         gsap.to(this.camera.position, {
-            //onStart: () => { this.controls.enabled = false },
+            onStart: () => { this.controls.enabled = false },
             onComplete: () => { this.controls.enabled = true },
             duration: 5,
             x: this.posX,

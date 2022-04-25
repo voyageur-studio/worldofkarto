@@ -1,6 +1,7 @@
 
 import * as THREE from 'three'
 
+
 export class Loading {
 
     constructor()
@@ -16,8 +17,10 @@ export class Loading {
 
             // optional: remove loader from DOM via event listener
            this.loadingScreen.addEventListener('transitionend', onTransitionEnd)
-
+           
         })
+
+        
         function onTransitionEnd(event) {
 
             event.target.remove();

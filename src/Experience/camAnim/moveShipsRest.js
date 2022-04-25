@@ -19,7 +19,7 @@ export default class moveShipsRest
         
         
         this.targetX = 9.441
-        this.targetY = -0.008
+        this.targetY = 0
         this.targetZ = -28.364
 
 

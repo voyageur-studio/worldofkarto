@@ -19,7 +19,7 @@ export default class moveStart
         
         //target position
         this.targetX = 1.505
-        this.targetY = 1.502
+        this.targetY = 0
         this.targetZ = -7.607
 
 

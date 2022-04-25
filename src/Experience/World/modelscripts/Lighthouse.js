@@ -1,6 +1,7 @@
 import * as THREE from 'three'
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer'
 import Experience from '../../Experience.js'
-
+import LabelRenderer from '../../LabelRenderer.js'
 export default class Lighthouse
 {
     constructor()
@@ -19,7 +20,12 @@ export default class Lighthouse
 
         // Resource
         this.resource = this.resources.items.lighthouseModel
+        
 
+        
+
+
+        
         this.setModel()
         //this.setAnimation()
     }
@@ -29,7 +35,7 @@ export default class Lighthouse
         this.model = this.resource.scene
         this.model.scale.set(1, 1, 1)
         this.scene.add(this.model)
-
+        
         this.model.traverse((child) =>
         {
             if(child instanceof THREE.Mesh)
@@ -41,7 +47,7 @@ export default class Lighthouse
             
         })
         console.log(this.model)
-
+        
         
         
         

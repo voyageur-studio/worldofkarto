@@ -19,7 +19,7 @@ export default class moveMoonvale
         
         
         this.targetX = 23.528
-        this.targetY = 0.762
+        this.targetY = 0
         this.targetZ = 2.130
 
 

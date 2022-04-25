@@ -16,7 +16,7 @@ export default class moveDarkspeare
  
       
         this.targetX = 33.066
-        this.targetY = 0.194
+        this.targetY = 0
         this.targetZ = -10.588
 
 

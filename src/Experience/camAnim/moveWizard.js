@@ -14,12 +14,12 @@ export default class moveWizard
         this.controls = this.experience.camera.controls
  
         this.posX = 62.939
-        this.posY = 7.561
+        this.posY = 9.561
         this.posZ = -24.521
         
         
         this.targetX = 65.210
-        this.targetY = 3.472
+        this.targetY = 0
         this.targetZ = -12.992
 
 

@@ -15,7 +15,7 @@ export default class Camera
         this.sizes = this.experience.sizes
         this.scene = this.experience.scene
         this.canvas = this.experience.canvas
-        this.world = new World()
+        //this.world = new World()
         this.setInstance()
         this.setControls()
 

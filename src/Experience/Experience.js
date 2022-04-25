@@ -21,6 +21,9 @@ import moveStart from './camAnim/moveStart.js'
 import movePlayButton from './camAnim/movePlayButton.js'
 import TitleLottie from './Utils/TitleScreen.js'
 import LoadingLottie from './Utils/LoadingLottie.js'
+import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer'
+import { LoadingManager } from 'three'
+
 
 let instance = null
 
@@ -49,12 +52,13 @@ export default class Experience
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
+        
         this.world = new World()
         //this.camAnim = new camAnim()
         this.movestart = new moveStart()
         this.title = new TitleLottie()
         this.loadinglottie = new LoadingLottie()
-
+        
         //fog
         const color = 0x67D0FA;
         {
@@ -69,22 +73,33 @@ export default class Experience
         this.stats = new Stats();
         this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
         document.body.appendChild(this.stats.dom);
+ 
         
+        
+
         //anim
         this.controlbuttons = document.querySelector('.control-wrap')
         this.titlescreen = document.querySelector('.title')
+        this.captions = document.querySelector('.captions')
         this.playBox = document.getElementById('play')
         this.playBox.addEventListener("click", () => {
             new movePlayButton()
+            
             this.playBox.classList.add('fade-out')
             this.controlbuttons.classList.add('fade-in')
             this.titlescreen.classList.add('fade-out')
+            this.captions.classList.add('show')
+            this.playBox.addEventListener('transitionstart', () => {
+                this.captions.classList.add('fade-in')
+            })
+            
+            
             this.playBox.addEventListener('transitionend', onTransitionEnd)
             this.titlescreen.addEventListener('transitionend', onTransitionEnd)
             function onTransitionEnd(event) {
 
                 event.target.remove();
-
+                
             }
         } ),
 
@@ -92,6 +107,7 @@ export default class Experience
         this.animDarkspeare.addEventListener("click", function () {
             new moveDarkspeare()
         }),
+            
 
             this.animMoonvale = document.getElementById('moonvale')
         this.animMoonvale.addEventListener("click", function () {
@@ -112,7 +128,7 @@ export default class Experience
         }),
             this.animStart = document.getElementById('mapreset')
         this.animStart.addEventListener("click", function () {
-            new movePlayButton()
+            new moveStart()
         }),
         
         // Resize event
@@ -139,6 +155,7 @@ export default class Experience
         this.camera.update()
         this.world.update()
         this.renderer.update()
+        
         this.stats.update()
         
     }

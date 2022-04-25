@@ -19,7 +19,7 @@ export default class moveMidfair
         
         
         this.targetX = 31.842
-        this.targetY = 0.206
+        this.targetY = 0
         this.targetZ = -36.973
 
 

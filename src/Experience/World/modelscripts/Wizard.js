@@ -38,6 +38,7 @@ export default class Wizard
                 child.receiveShadow = true
             }
         })
+        console.log(this.model)
     }
 
     setAnimation()

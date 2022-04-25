@@ -1,5 +1,7 @@
 import * as THREE from 'three'
 import Experience from './Experience.js'
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer'
+import LabelRenderer from './LabelRenderer.js'
 
 export default class Renderer
 {
@@ -14,6 +16,7 @@ export default class Renderer
 
         
         this.setInstance()
+        this.setLabelRendererInstance()
         
     }
 
@@ -39,6 +42,18 @@ export default class Renderer
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
         
+       
+    }
+    setLabelRendererInstance()
+    {
+        this.labelRenderer = new CSS2DRenderer();
+        this.labelRenderer.setSize(window.innerWidth, window.innerHeight);
+        this.labelRenderer.domElement.style.position = 'absolute';
+        this.labelRenderer.domElement.style.top = '0px';
+        this.labelRenderer.domElement.className = 'label-wrap'
+        document.getElementById('canvasparent').appendChild(this.labelRenderer.domElement);
+
+        
     }
  
 
@@ -51,5 +66,6 @@ export default class Renderer
     update()
     {
         this.instance.render(this.scene, this.camera.instance)
+        
     }
 }
