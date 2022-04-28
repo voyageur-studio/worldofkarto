@@ -59,8 +59,7 @@ export default class movePlayButton
 
         gsap.to(this.scene.fog, {
             duration: 5,
-            near: 5,
-            far: 100,
+            density: .01,
             ease: "sine.inOut",
         })
 

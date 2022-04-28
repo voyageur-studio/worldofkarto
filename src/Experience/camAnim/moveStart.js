@@ -13,10 +13,10 @@ export default class moveStart
         this.camera = this.experience.camera.instance
         this.controls = this.experience.camera.controls
         //camera position
-        this.posX = -40.139
-        this.posY = 35.464
-        this.posZ = 69.665
-        
+        this.posX = -39.396
+        this.posY = 6
+        this.posZ = -9.614
+
         //target position
         this.targetX = 1.505
         this.targetY = 0
@@ -37,7 +37,7 @@ export default class moveStart
 
         gsap.to(this.camera.position, {
             onStart: () => { this.controls.enabled = false },
-            //onComplete: () => { this.controls.enabled = true },
+            onComplete: () => { this.controls.enabled = true },
             duration: 5,
             x: this.posX,
             y: this.posY,
@@ -53,6 +53,12 @@ export default class moveStart
             ease: "sine.inOut",
             onUpdate: () => { this.controls.update()}
 
+        })
+
+        gsap.to(this.scene.fog, {
+            duration: 5,
+            density: .01,
+            ease: "sine.inOut",
         })
 
 

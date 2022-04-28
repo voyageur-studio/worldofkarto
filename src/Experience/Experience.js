@@ -54,17 +54,17 @@ export default class Experience
         
         this.world = new World()
         //this.camAnim = new camAnim()
-        this.movestart = new moveStart()
+       // this.movestart = new movePlayButton()
         this.title = new TitleLottie()
         this.loadinglottie = new LoadingLottie()
         
         //fog
         const color = 0x67D0FA;
         {
-
+            const fogdensity = 0.008
             const near = 1;
             const far = 150;
-            this.scene.fog = new THREE.Fog(color, near, far);
+            this.scene.fog = new THREE.FogExp2(color, fogdensity);
         }
         this.scene.background = new THREE.Color(color);
         
@@ -77,30 +77,17 @@ export default class Experience
         
 
         //anim
-        this.controlbuttons = document.querySelector('.control-wrap')
-        this.titlescreen = document.querySelector('.title')
-        this.captions = document.querySelector('.captions')
         this.playBox = document.getElementById('play')
         this.playBox.addEventListener("click", () => {
-            new movePlayButton()
-            animate('#site-logo', {transform: "translateY(0)" }, {delay: 2}, {duration: 1})
-            animate('.icon', { opacity: "1" }, { delay: stagger(.01), duration: 1, easing: [.22, .03, .26, 1] })
-            this.playBox.classList.add('fade-out')
-            this.controlbuttons.classList.add('fade-in')
-            this.titlescreen.classList.add('fade-out')
-            this.captions.classList.add('show')
-            this.playBox.addEventListener('transitionstart', () => {
-                this.captions.classList.add('fade-in')
-            })
-            
-            
-            this.playBox.addEventListener('transitionend', onTransitionEnd)
-            this.titlescreen.addEventListener('transitionend', onTransitionEnd)
-            function onTransitionEnd(event) {
-
-                event.target.remove();
-                
-            }
+            new moveStart()
+            animate('#site-logo',  { transform: "translateY(0)" }, { delay: 2 }, { duration: 1, easing: [.22, .03, .26, 1]})
+            animate('#webgl', { borderWidth: "2em" }, { delay: 0.5 }, { duration: 1, easing: [.22, .03, .26, 1] })
+            animate('.icon', { opacity: "1" }, { delay: stagger(.1), duration: 1, easing: [.22, .03, .26, 1] })
+            animate('#title', { transform: "translateY(-200%)", opacity: 0 }, { duration: 3, easing: [.22, .03, .26, 1] })
+            animate('.title-subtext', { transform: "scale(0.00001)", opacity: 0 }, { duration: 3, easing: [.22, .03, .26, 1] })
+            animate('.title',  { display: "none" }, { delay: 5})
+            animate('#play', { transform: "scale(0.00001)", opacity: 0 }, { delay: 0.3, duration: 3, easing: [.32, -0.26, .32, 1] })
+            animate('.control-wrap', { opacity: "1", transform: "translateY(0)"}, { delay: .6, duration: 1 })
         } ),
 
             this.animDarkspeare = document.getElementById('darkspeare')
