@@ -51,6 +51,7 @@ export default class Experience
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
+    
         
         this.world = new World()
         //this.camAnim = new camAnim()
@@ -73,7 +74,11 @@ export default class Experience
         this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
         document.body.appendChild(this.stats.dom);
  
-        
+        //dispose on refresh
+/*         this.dispose = window.onbeforeunload = function (event) {
+
+            destroy()
+        }; */
         
 
         //anim
@@ -88,6 +93,9 @@ export default class Experience
             animate('.title',  { display: "none" }, { delay: 5})
             animate('#play', { transform: "scale(0.00001)", opacity: 0 }, { delay: 0.3, duration: 3, easing: [.32, -0.26, .32, 1] })
             animate('.control-wrap', { opacity: "1", transform: "translateY(0)"}, { delay: .6, duration: 1 })
+            animate('.captions', {display: 'flex'})
+            animate('.captions', { opacity: 1 }, { delay: 0.3, duration: 3, easing: [.22, .03, .26, 1] })
+
         } ),
 
             this.animDarkspeare = document.getElementById('darkspeare')

@@ -9,6 +9,7 @@ import moveMidfair from './camAnim/moveMidfair.js'
 import moveShipsRest from './camAnim/moveShipsRest.js'
 import moveMoonvale from './camAnim/moveMoonvale.js'
 import moveWizard from './camAnim/moveWizard.js'
+import { timeline } from 'motion'
 
 export class LabelRenderer
 {
@@ -22,8 +23,8 @@ export class LabelRenderer
         this.resources = this.experience.resources
         this.labelRenderer = this.experience.renderer.labelRenderer
 
-        
-        
+        this.lighthouseHead = 'Vysmere Light'
+        this.lighthouseBody = 'The lighthouse stands on Vysmere Isle, a small island in Moonstone Bay. The lighthouse took 15 years to construct due to its remote location. Fuldor the Lighthouse keeper lives in isolation on the island, keeping the light running day and night.'
         this.setLabelLighthouse()
         this.setLabelDarkspeare()
         this.setLabelMidfair()
@@ -36,28 +37,68 @@ export class LabelRenderer
 
     setLabelLighthouse()
     {
-        
+        this.defaultSequence = [
+
+            ["#default-tooltip", { opacity: 0 }, { duration: 0.2 }],
+            ["#default-tooltip", { display: "none" }]
+            
+        ]
+        this.enterSequence = [
+            ["#caption-box", { height: "17rem" }, { duration: 0.5 }],
+            ["#pin-tooltip", { transform: "translateY(0)" }, { duration: .2 }, { at: "-0.3" }],
+            ["#pin-tooltip", { opacity: 1 }, { duration: .3 }, {at: "-0.1"}],
+            // This will start 0.2 seconds before the end of the previous animation:
+            
+        ]
+        this.leaveSequence = [
+            
+            ["#default-tooltip", { opacity: 0, display: "block" }],
+            ["#default-tooltip", { opacity: 1 }, { duration: 0.1, at: "+0.1" }],
+            ["#pin-tooltip", { opacity: 0 }, { duration: .5 }, { at: "-0.3" }],
+            ["#pin-tooltip", { transform: "translateY(100%)" }, { duration: 0.5, at: "-0.3" }],
+            // This will start 0.2 seconds after the previous animation:
+            
+            // This will start 0.2 seconds before the end of the previous animation:
+
+            ["#caption-box", { height: "10rem", minHeight: "5rem" }, { duration: 0.2, at: "-0.3" }],
+            
+        ]
+        this.defaultToolTip = document.getElementById('default-tooltip')
+        this.captionBox = document.getElementById('caption-box')
+        this.pinToolTip = document.createElement('div')
+        this.pinToolTip.id = "pin-tooltip"
+        this.pinToolTip.classList.add("caption-text-wrap")
+        this.ttHead = document.createElement('h3')
+        this.ttHead.textContent = this.lighthouseHead
+        this.ttBody = document.createElement("p")
+        this.ttBody.textContent = this.lighthouseBody
+        this.pinToolTip.appendChild(this.ttHead)
+        this.pinToolTip.appendChild(this.ttBody)
       this.lighthouse = this.scene.getObjectByName('_Lighthouse')
        this.modelDIV = document.createElement('div')
         this.modelDIV.classList.add('label')
         this.modelDIV.setAttribute('id', 'lighthouselabel')
         this.modelDIV.innerHTML = '<div class="icon-wrap" id="icon-wrap"><img src="/images/Pin_Icon1.svg" loading="lazy" class="icon" ></div>'
-      this.modelLabel = new CSS2DObject(this.modelDIV)
+        this.modelLabel = new CSS2DObject(this.modelDIV)
       this.modelLabel.position.set(0, 10, 0)
       this.lighthouse.add ( this.modelLabel )
       console.log(this.lighthouse.name)
       this.modelDIV.addEventListener('mouseenter', () =>
       {
-          this.labelTEXT = document.getElementById('caption-box')
-          this.labelICON = document.getElementById('lighthouselabel')
-          this.labelICON.classList.add('translate')
-          this.labelTEXT.innerHTML = '<div class="caption-text-wrap"><h3 class="captions-title">Vysmere Lighthouse</h3><p class="caption-text">The Vysmere Lighthouse illuminates Moonvale bay.</p></div>'
+          timeline(this.defaultSequence).finished.then(() => {
+              this.captionBox.appendChild(this.pinToolTip)
+              timeline(this.enterSequence)
+          })
+        
+          
+          //'<div class="caption-text-wrap"><h3 class="captions-title">Vysmere Lighthouse</h3><p class="caption-text">The Vysmere Lighthouse illuminates Moonvale bay.</p></div>'
       })
         this.modelDIV.addEventListener('mouseleave', () => {
-            this.labelTEXT = document.getElementById('caption-box')
-            this.labelICON = document.getElementById('lighthouselabel')
-            this.labelICON.classList.remove('translate')
-            this.labelTEXT.innerHTML = '<div class="caption-text-wrap"><h3 class="captions-title">Lore</h3><p class="caption-text">Hover over a red pin to view that places .</p></div>'
+            
+            timeline(this.leaveSequence).finished.then(() => {
+                this.captionBox.removeChild(this.pinToolTip)
+            })
+            
         })
         this.modelDIV.addEventListener('click', () => {
             new movePlayButton()

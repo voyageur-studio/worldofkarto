@@ -18,7 +18,7 @@ export default class Environment
 
         this.setSunLight()
         this.setHemLight()
-        this.setEnvironmentMap()
+       // this.setEnvironmentMap()
     }
 
     setSunLight()
@@ -105,7 +105,7 @@ export default class Environment
                 .step(0.001)
         }
     }
-    setEnvironmentMap()
+     /* setEnvironmentMap()
     {
         this.environmentMap = {}
         this.environmentMap.intensity = 0.4
@@ -139,5 +139,5 @@ export default class Environment
                 .step(0.001)
                 .onChange(this.environmentMap.updateMaterials)
         }
-    }
+    } */
 }
