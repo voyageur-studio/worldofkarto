@@ -56,10 +56,13 @@ export default class moveStart
         })
 
         gsap.to(this.scene.fog, {
-            duration: 5,
+            duration: 7,
             density: .01,
             ease: "sine.inOut",
+            onComplete: () => { this.camera.far = 150}
         })
+
+    
 
 
 

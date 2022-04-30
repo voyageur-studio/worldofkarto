@@ -95,7 +95,7 @@ export default class Experience
             animate('.control-wrap', { opacity: "1", transform: "translateY(0)"}, { delay: .6, duration: 1 })
             animate('.captions', {display: 'flex'})
             animate('.captions', { opacity: 1 }, { delay: 0.3, duration: 3, easing: [.22, .03, .26, 1] })
-
+            console.log("Number of Triangles :", this.renderer.instance.info.render.triangles);
         } ),
 
             this.animDarkspeare = document.getElementById('darkspeare')
