@@ -59,7 +59,7 @@ export default class moveStart
             duration: 7,
             density: .01,
             ease: "sine.inOut",
-            onComplete: () => { this.camera.far = 150}
+            onComplete: () => { this.camera.far = 200}
         })
 
     

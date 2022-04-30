@@ -16,6 +16,7 @@ import { LabelMidfair } from './Labels/LabelMidfair.js'
 import { LabelShipsRest } from './Labels/LabelShipsRest.js'
 import { LabelWizard } from './Labels/LabelWizard.js'
 import { LabelMoonvale } from './Labels/LabelMoonvale.js'
+import { LabelGraelon } from './Labels/LabelGraelon.js'
 
 export class LabelRenderer
 {
@@ -34,6 +35,7 @@ export class LabelRenderer
         this.lavelShipsRest - new LabelShipsRest()
         this.labelWizard = new LabelWizard()
         this.labelMoonvale = new LabelMoonvale()
+        this.labelgraelon = new LabelGraelon()
         
         
     }

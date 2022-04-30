@@ -70,9 +70,9 @@ export default class Experience
         this.scene.background = new THREE.Color(color);
         
         //stats
-        this.stats = new Stats();
-        this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-        document.body.appendChild(this.stats.dom);
+       // this.stats = new Stats();
+        //this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+        //document.body.appendChild(this.stats.dom);
  
         //dispose on refresh
 /*         this.dispose = window.onbeforeunload = function (event) {
@@ -152,7 +152,7 @@ export default class Experience
         this.world.update()
         this.renderer.update()
         
-        this.stats.update()
+        //this.stats.update()
         
     }
     

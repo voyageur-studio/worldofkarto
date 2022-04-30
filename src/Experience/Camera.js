@@ -28,7 +28,7 @@ export default class Camera {
         this.controls.dampingFactor = 0.1
         this.controls.screenSpacePanning = false
         this.controls.minDistance = 6
-        this.controls.maxDistance = 200
+        this.controls.maxDistance = 150
         this.controls.maxPolarAngle = Math.PI / 2.2
         this.controls.rotateSpeed = 2
         this.controls.panSpeed = 1.5
