@@ -17,6 +17,7 @@ import ShipsRest from './modelscripts/ShipsRest.js'
 import Wizard from './modelscripts/Wizard.js'
 import {LabelRenderer} from '../LabelRenderer.js'
 import Graelon from './modelscripts/Graelon.js'
+import Blackwater from './modelscripts/Blackwater.js'
 
 
 export default class World
@@ -47,6 +48,7 @@ export default class World
             this.shipsrest = new ShipsRest()
             this.wizard = new Wizard()
             this.graelon = new Graelon()
+            this.blackwater = new Blackwater()
             this.environment = new Environment()
             this.label = new LabelRenderer()
         })

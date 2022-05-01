@@ -70,4 +70,9 @@ export default [
         type: 'gltfModel',
         path: '../models/Cities/Graelon.glb'
     },
+    {
+        name: 'blackwaterModel',
+        type: 'gltfModel',
+        path: '../models/Cities/Blackwater.glb'
+    },
 ]
