@@ -40,7 +40,7 @@ export default class movePlayButton
         gsap.to(this.camera.position, {
             onStart: () => { this.controls.enabled = false },
             onComplete: () => { this.controls.enabled = true },
-            duration: 5,
+            duration: 2,
             x: this.posX,
             y: this.posY,
             z: this.posZ,
@@ -55,12 +55,6 @@ export default class movePlayButton
             ease: "sine.inOut",
             onUpdate: () => { this.controls.update()}
 
-        })
-
-        gsap.to(this.scene.fog, {
-            duration: 5,
-            density: .01,
-            ease: "sine.inOut",
         })
 
 

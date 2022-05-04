@@ -88,7 +88,7 @@ export class LabelLighthouse
             timeline(this.leaveSequence)
         })
         this.modelDIV.addEventListener('click', () => {
-            new moveDarkspeare()
+            new movePlayButton()
         })
 
 
